@@ -3,7 +3,10 @@ name = "pluginci"
 version = "0.1.0"
 authors = ["doomy <alexanderpaullozada@gmail.com>"]
 # edition = "2018"
+
+[lib]
 crate-type = ["cdylib"]
+name = "ci_plugin"
 
 [dependencies]
 vst = { git = "https://github.com/rust-dsp/rust-vst" }
