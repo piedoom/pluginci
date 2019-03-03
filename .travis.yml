@@ -1,0 +1,13 @@
+language: rust
+env:
+  secure: "Scts2BoXXesJUf0cKCAisLCuE6qELQf3hf0wFOcUjTvBID469wDTJWaAJGXx/gUxBrDz1NKj0gI8bhp7UlMEvtn6Xq6jtt7ImS5Rh9UDctOGl1fvNcO4ZktU22g/BvJFQPgbRKfdn3khdKmS8ibsBZQDf8C18wqC11s0ELjk7qqItyktnjfwSMIf+CrbWKgAdc8JqlWz9aonLr7BcDx4HqhR2k/CjuxILLwqlOu3NsLDOYpu1yeVXaShlOu+00M/5Llo2m6AS92+jt6tTa20fAeAhzh4GIZmukCJmzSaGbP65+b4BhxreV50iXiIu825rWlCKTV/qY/3KISrLOgHCrPlolfYRwR8O648Tn8slc0nzZcaIfF60TEUSWpkuvqqQMU6sT5Wchd+wrK/nXxutf2YbDgenrIE+nLU1QVEj3uLP2rfkEIyK/mY3H1mLpUn+EVYAY6pkb7LKrzPyWI4ucJjMcPV9WP1Z1t5qp/4XmHk3SPyb36CR9W5/eYdzWfAaZqOOTJTOHKAU5x7jO/WvhPG71bw4lH6cruonJ2VMayh17zUD8HzCJuUEywcDquC0k2siU6ccuYNL1WbmCjzUqV1tlhAdRfiKCQHIS24QeShQRTM2yKfu7cTt9uHRA7+8TXYSBeXtREvCGMMbUk3kIk+1jjhlrW/kr4q6R3oBZo="
+matrix:
+  include:
+    - os: windows
+deploy:
+  provider: releases
+  api_key: ${GITHUB_API_KEY}
+  file: "target/release/ci_plugin.dll"
+  skip_cleanup: true
+  on: 
+    tags: true
