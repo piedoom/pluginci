@@ -4,6 +4,8 @@ env:
 matrix:
   include:
     - os: windows
+script:
+  - cargo build --release
 deploy:
   provider: releases
   api_key: ${GITHUB_API_KEY}
